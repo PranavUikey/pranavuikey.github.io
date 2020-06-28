@@ -9,6 +9,7 @@
   <meta name="description" content="PranavUikey.github.io">
 
   <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel = "stylesheet" href="/assets/css/cards.css">  
 </head>
 
   <body>
@@ -96,8 +97,8 @@
     <a class="project-link" href="#">Check it out</a>
   </div>
 </div>
-      </section>
-      <section id="blogs">
+</section>
+<section id="blogs">
         <!--<div class="user-details">
     <h1> Blogs Posts </h1>
   </div>
@@ -131,38 +132,19 @@
 </div>
 <div class="user-projects">
 
-    <ul class="cards">
-        <li class="cards_item">
-        <div class="card">
-            <div class="card_image"><img src="https://picsum.photos/500/300/?image=10"></div>
-            <div class="card_content">
-            <h2 class="card_title">How To Install Anaconda</h2>
-            <p class="card_text">A famous tool widely used in Data Science Field. How to install it?</p>
-            <button class="btn card_btn">Read More</button>
-            </div>
-        </div>
-        </li>
-        <li class="cards_item">
-        <div class="card">
-            <div class="card_image"><img src="https://picsum.photos/500/300/?image=5"></div>
-            <div class="card_content">
-            <h2 class="card_title">Fundamentals of OpenCV Part 1</h2>
-            <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-            <button class="btn card_btn">Read More</button>
-            </div>
-        </div>
-        </li>
-        <li class="cards_item">
-        <div class="card">
-            <div class="card_image"><img src="https://picsum.photos/500/300/?image=11"></div>
-            <div class="card_content">
-            <h2 class="card_title">Fundamentals of OpenCV Part 2</h2>
-            <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
-            <button class="btn card_btn">Read More</button>
-            </div>
-        </div>
-        </li>
-    </ul>
+- var cards = [{ title: 'Mountain View', copy: 'Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains', button: 'View Trips' }, { title: 'To The Beach', copy: 'Plan your next beach trip with these fabulous destinations', button: 'View Trips' }, { title: 'Desert Destinations', copy: 'It\'s the desert you\'ve always dreamed of', button: 'Book Now' }, { title: 'Explore The Galaxy', copy: 'Seriously, straight up, just blast off into outer space today', button: 'Book Now' }]
+
+
+mixin card(title, copy, button)
+  .card
+    .content
+      h2.title= title
+      p.copy= copy
+      button.btn= button
+
+main.page-content
+  each card in cards
+    +card(card.title, card.copy, card.button)
 </div>
 
       </section>
